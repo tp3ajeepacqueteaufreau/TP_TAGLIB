@@ -9,4 +9,10 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <jsp-config>
+  	<taglib>
+  		<taglib-uri>org.mines.douai.j2ee.tp.pacqueteau_freau.TagLibMultiLangYellowJacketServlet</taglib-uri>
+  		<taglib-location>/WEB-INF/tlds/tp.tld</taglib-location>
+  	</taglib>
+  </jsp-config>
 </web-app>
