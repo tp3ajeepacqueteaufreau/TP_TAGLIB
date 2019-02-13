@@ -10,6 +10,8 @@
 <body>
 	<p>Same but english version</p>
 	<form>
+			<input type="hidden" name="lang" value="en" />
+	
 		<select name="list" >
 		<!-- Methode William -->
 		<option<%if("France".equals(request.getParameter("list"))){out.print(" selected");}%>>France</option>
