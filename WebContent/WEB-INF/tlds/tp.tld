@@ -4,11 +4,18 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
 	<tlib-version>2.0</tlib-version>
 	<jsp-version>2.0</jsp-version>
-	<short-name>HelloWorld</short-name>
-	<uri>org.mines.douai.j2ee.tp.pacqueteau_freau.TagLibMultiLangYellowJacketServlet</uri>
+	<short-name>I18nYellowJacket</short-name>
 	<tag>
-		<name>lang</name>
-		<tagclass>org.mines.douai.j2ee.tp.pacqueteau_freau.TagLibMultiLangYellowJacketServlet</tagclass>
-		<bodycontent>empty</bodycontent>
+		<name>I18nYellowJacket</name>
+		<tagclass>org.mines.douai.j2ee.tp.pacqueteau_freau.I18nYellowJacket</tagclass>
+		 <body-content>empty</body-content>
+		 <attribute>
+		 	<name>lang</name>
+		 	<required>true</required>
+		 </attribute>
+		 <attribute>
+		 	<name>key</name>
+		 	<required>true</required>
+		 </attribute>
 	</tag> 
 </taglib>
