@@ -10,10 +10,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		<tagclass>org.mines.douai.j2ee.tp.pacqueteau_freau.I18nYellowJacket</tagclass>
 		 <body-content>empty</body-content>
 		 <attribute>
-		 	<name>lang</name>
-		 	<required>true</required>
-		 </attribute>
-		 <attribute>
 		 	<name>key</name>
 		 	<required>true</required>
 		 </attribute>

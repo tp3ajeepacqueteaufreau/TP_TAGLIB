@@ -8,8 +8,6 @@ import javax.servlet.jsp.tagext.TagSupport;
 public class I18nYellowJacket extends TagSupport {
 	private static final long serialVersionUID = 1L;
     
-	
-	private String lang;
 	private String key;
 	
 	
@@ -21,21 +19,64 @@ public class I18nYellowJacket extends TagSupport {
 	public int doStartTag() throws JspException {
 		super.doStartTag();
 		try {
-			pageContext.getOut().println("HelloWorld Taglib");
-			pageContext.getOut().println ("Lang: " + this.lang);
-			pageContext.getOut().println("Key: " + this.key);
+			this.pageContext.getOut().print(this.getStr());
 		} catch (IOException e) {
 			throw new JspException ("I/O Error", e);
 		}
 		return SKIP_BODY;
 	}
-
-	public String getLang() {
-		return lang;
+	
+	private String getStr() {
+		if(this.pageContext.getRequest().getParameter("lang") == null)
+		{
+			return "Lang is null! Should be en or fr";
+		}
+		
+		if(key.equals("lang"))
+		{
+			return this.pageContext.getRequest().getParameter("lang");
+		}
+		
+		switch(this.pageContext.getRequest().getParameter("lang"))
+		{
+		case "fr":
+			return this.fr();
+		default:
+			return this.en();
+		}
 	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
+	
+	
+	private String fr() {
+		switch(key)
+		{
+		case "Fre":
+			return "France";
+		case "Ale":
+			return "Allemagne";
+		case "Pol":
+			return "Pologne";
+		case "Submit":
+			return "Valider";
+		default:
+			return "Unknown key: " + this.key;
+		}
+	}
+	
+	private String en() {
+		switch(key)
+		{
+		case "Fre":
+			return "French";
+		case "Ale":
+			return "Deutchland";
+		case "Pol":
+			return "Polska";
+		case "Submit":
+			return "Submit";
+		default:
+			return "Unknown key: " + this.key;
+		}
 	}
 
 	public String getKey() {
